@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "microstorm"
+version = "0.1.2"
+description = "A modern microservices toolkit for Python with built-in discovery, metrics, and security."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name="Jhoel Peralta", email="jhoelperalta@gmail.com" }
+]
+keywords = ["microservices", "fastapi", "prometheus", "jwt", "service discovery", "microstorm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Framework :: FastAPI",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+]
+
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "httpx",
+    "prometheus_client",
+    "python-dotenv",
+    "PyJWT",
+]
+
+[project.urls]
+Homepage = "https://github.com/jhoelperaltap/microstorm"
+Documentation = "https://github.com/jhoelperaltap/microstorm#readme"
+Source = "https://github.com/jhoelperaltap/microstorm"
+
+[tool.setuptools]
+packages = ["microstorm", "strictaccess", "discovery"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --tb=short --color=yes"
+testpaths = ["tests"]
+python_files = "test_*.py"
